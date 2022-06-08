@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<sample t="3609" it="0" lt="3608" ct="3598" ts="1654680384409" s="true" lb="获取当前会计日期" rc="200" rm="OK" tn="测试TEST 1-1" dt="text" by="18" sby="0" ng="1" na="1"/>
+<httpSample t="373" it="0" lt="373" ct="28" ts="1654680388102" s="true" lb="活期存入" rc="200" rm="OK" tn="测试TEST 1-1" dt="" by="875" sby="1724" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="2856" it="0" lt="2855" ct="2836" ts="1654680405629" s="true" lb="获取当前会计日期" rc="200" rm="OK" tn="测试TEST 1-1" dt="text" by="18" sby="0" ng="1" na="1"/>
+<httpSample t="245" it="0" lt="245" ct="24" ts="1654680408563" s="true" lb="活期存入" rc="200" rm="OK" tn="测试TEST 1-1" dt="" by="875" sby="1724" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="3396" it="0" lt="3394" ct="3368" ts="1654680486507" s="true" lb="获取当前会计日期" rc="200" rm="OK" tn="测试TEST 1-1" dt="text" by="18" sby="0" ng="1" na="1"/>
+<httpSample t="223" it="0" lt="223" ct="28" ts="1654680490001" s="true" lb="活期存入" rc="200" rm="OK" tn="测试TEST 1-1" dt="" by="875" sby="1724" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="22958" it="0" lt="0" ct="22958" ts="1654687564449" s="false" lb="获取当前会计日期" rc="null 0" rm="java.sql.SQLException: Cannot create PoolableConnectionFactory (IO 错误: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。, Authentication lapse 0 ms.)" tn="测试TEST 1-1" dt="text" by="186" sby="0" ng="1" na="1"/>
+<httpSample t="18973" it="0" lt="0" ct="38" ts="1654687587490" s="false" lb="活期存入" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="测试TEST 1-1" dt="text" by="2601" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Test failed: text expected to contain /&quot;RET_CODE&quot;:&quot;000000&quot;/</failureMessage>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="20416" it="0" lt="0" ct="20416" ts="1654687682694" s="false" lb="获取当前会计日期" rc="null 0" rm="java.sql.SQLException: Cannot create PoolableConnectionFactory (IO 错误: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。, Authentication lapse 0 ms.)" tn="测试TEST 1-1" dt="text" by="186" sby="0" ng="1" na="1"/>
+<httpSample t="18931" it="0" lt="0" ct="27" ts="1654687703186" s="false" lb="活期存入" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="测试TEST 1-1" dt="text" by="2601" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Test failed: text expected to contain /&quot;RET_CODE&quot;:&quot;000000&quot;/</failureMessage>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="21744" it="0" lt="0" ct="21743" ts="1654687803026" s="false" lb="获取当前会计日期" rc="null 0" rm="java.sql.SQLException: Cannot create PoolableConnectionFactory (IO 错误: The Network Adapter could not establish the connection)" tn="测试TEST 1-1" dt="text" by="107" sby="0" ng="1" na="1"/>
+<httpSample t="30323" it="0" lt="0" ct="314" ts="1654687824845" s="false" lb="活期存入" rc="Non HTTP response code: org.apache.http.NoHttpResponseException" rm="Non HTTP response message: 11.6.25.13:9110 failed to respond" tn="测试TEST 1-1" dt="text" by="2082" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Test failed: text expected to contain /&quot;RET_CODE&quot;:&quot;000000&quot;/</failureMessage>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="20597" it="0" lt="0" ct="20597" ts="1654687922938" s="false" lb="获取当前会计日期" rc="null 0" rm="java.sql.SQLException: Cannot create PoolableConnectionFactory (IO 错误: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。, Authentication lapse 0 ms.)" tn="测试TEST 1-1" dt="text" by="186" sby="0" ng="1" na="1"/>
+<httpSample t="18938" it="0" lt="0" ct="31" ts="1654687943602" s="false" lb="活期存入" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="测试TEST 1-1" dt="text" by="2601" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Test failed: text expected to contain /&quot;RET_CODE&quot;:&quot;000000&quot;/</failureMessage>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="21765" it="0" lt="0" ct="21765" ts="1654688042687" s="false" lb="获取当前会计日期" rc="null 0" rm="java.sql.SQLException: Cannot create PoolableConnectionFactory (IO 错误: The Network Adapter could not establish the connection)" tn="测试TEST 1-1" dt="text" by="107" sby="0" ng="1" na="1"/>
+<httpSample t="21023" it="0" lt="0" ct="21023" ts="1654688064522" s="false" lb="活期存入" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 11.6.25.13:9110 [/11.6.25.13] failed: Connection timed out: connect" tn="测试TEST 1-1" dt="text" by="2805" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Test failed: text expected to contain /&quot;RET_CODE&quot;:&quot;000000&quot;/</failureMessage>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="7737" it="0" lt="7736" ct="7681" ts="1654688162843" s="true" lb="获取当前会计日期" rc="200" rm="OK" tn="测试TEST 1-1" dt="text" by="18" sby="0" ng="1" na="1"/>
+<httpSample t="507" it="0" lt="507" ct="63" ts="1654688170658" s="true" lb="活期存入" rc="200" rm="OK" tn="测试TEST 1-1" dt="" by="875" sby="1724" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="7000" it="0" lt="6999" ct="6928" ts="1654688282708" s="true" lb="获取当前会计日期" rc="200" rm="OK" tn="测试TEST 1-1" dt="text" by="18" sby="0" ng="1" na="1"/>
+<httpSample t="319" it="0" lt="319" ct="63" ts="1654688289790" s="true" lb="活期存入" rc="200" rm="OK" tn="测试TEST 1-1" dt="" by="875" sby="1724" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="7039" it="0" lt="7038" ct="6994" ts="1654688402652" s="true" lb="获取当前会计日期" rc="200" rm="OK" tn="测试TEST 1-1" dt="text" by="18" sby="0" ng="1" na="1"/>
+<httpSample t="328" it="0" lt="328" ct="62" ts="1654688409776" s="true" lb="活期存入" rc="200" rm="OK" tn="测试TEST 1-1" dt="" by="875" sby="1724" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="7037" it="0" lt="7036" ct="6988" ts="1654688522664" s="true" lb="获取当前会计日期" rc="200" rm="OK" tn="测试TEST 1-1" dt="text" by="18" sby="0" ng="1" na="1"/>
+<httpSample t="310" it="0" lt="310" ct="71" ts="1654688529790" s="true" lb="活期存入" rc="200" rm="OK" tn="测试TEST 1-1" dt="" by="875" sby="1724" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="6906" it="0" lt="6904" ct="6853" ts="1654688642949" s="true" lb="获取当前会计日期" rc="200" rm="OK" tn="测试TEST 1-1" dt="text" by="18" sby="0" ng="1" na="1"/>
+<httpSample t="628" it="0" lt="627" ct="70" ts="1654688649932" s="true" lb="活期存入" rc="200" rm="OK" tn="测试TEST 1-1" dt="" by="875" sby="1724" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="3588" it="0" lt="3587" ct="3576" ts="1654688765159" s="true" lb="获取当前会计日期" rc="200" rm="OK" tn="测试TEST 1-1" dt="text" by="18" sby="0" ng="1" na="1"/>
+<httpSample t="197" it="0" lt="197" ct="26" ts="1654688768839" s="true" lb="活期存入" rc="200" rm="OK" tn="测试TEST 1-1" dt="" by="875" sby="1724" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="2772" it="0" lt="2771" ct="2752" ts="1654688883259" s="true" lb="获取当前会计日期" rc="200" rm="OK" tn="测试TEST 1-1" dt="text" by="18" sby="0" ng="1" na="1"/>
+<httpSample t="241" it="0" lt="241" ct="26" ts="1654688886116" s="true" lb="活期存入" rc="200" rm="OK" tn="测试TEST 1-1" dt="" by="875" sby="1724" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="3234" it="0" lt="3232" ct="3218" ts="1654689002973" s="true" lb="获取当前会计日期" rc="200" rm="OK" tn="测试TEST 1-1" dt="text" by="18" sby="0" ng="1" na="1"/>
+<httpSample t="256" it="0" lt="256" ct="40" ts="1654689006332" s="true" lb="活期存入" rc="200" rm="OK" tn="测试TEST 1-1" dt="" by="875" sby="1724" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+
+<sample t="5054" it="0" lt="5053" ct="5038" ts="1654691485808" s="true" lb="获取当前会计日期" rc="200" rm="OK" tn="测试TEST 1-1" dt="text" by="18" sby="0" ng="1" na="1"/>
+<httpSample t="955" it="0" lt="954" ct="27" ts="1654691490977" s="true" lb="活期存入" rc="200" rm="OK" tn="测试TEST 1-1" dt="" by="875" sby="1724" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>http://11.6.25.13:9110/SmartEnsemble</java.net.URL>
+</httpSample>
+

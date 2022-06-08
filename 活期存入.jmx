@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="测试计划" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="测试TEST" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1653461604000</longProp>
+        <longProp name="ThreadGroup.end_time">1653461604000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="获取环境地址" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">E:\工作\2  自动化测试\Jmeter工具\DEMO\环境信息.csv</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">MAC,ENSEMBLE_address,ENSEMBLE_port,ENSEMBLE_path,ENSEMBLE,ENSEMBLE_IP</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+        </CSVDataSet>
+        <hashTree/>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="连接数据库" enabled="true">
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="checkQuery">select 1 from dual</stringProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="dataSource">UAT_CORE</stringProp>
+          <stringProp name="dbUrl">jdbc:oracle:thin:@${__CSVRead(E:\工作\2  自动化测试\Jmeter工具\DEMO\环境信息.csv,5)}</stringProp>
+          <stringProp name="driver">oracle.jdbc.OracleDriver</stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="password">ENS_CBANK</stringProp>
+          <stringProp name="poolMax">10</stringProp>
+          <stringProp name="timeout">10000</stringProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <stringProp name="username">${__CSVRead(E:\工作\2  自动化测试\Jmeter工具\DEMO\环境信息.csv,4)}</stringProp>
+          <boolProp name="preinit">false</boolProp>
+          <stringProp name="initQuery"></stringProp>
+          <stringProp name="connectionProperties"></stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="seqNo" elementType="Argument">
+              <stringProp name="Argument.name">seqNo</stringProp>
+              <stringProp name="Argument.value">${__RandomString(4,0123456789,)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">序号</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="获取当前会计日期" enabled="true">
+          <stringProp name="dataSource">UAT_CORE</stringProp>
+          <stringProp name="query">SELECT run_date FROM fm_system</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames">sysdate</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="活期存入" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;APP_HEAD&quot;: {&#xd;
+    &quot;CURRENT_NUM&quot;: &quot;0&quot;,&#xd;
+    &quot;PAGE_END&quot;: &quot;0&quot;,&#xd;
+    &quot;PAGE_START&quot;: &quot;0&quot;,&#xd;
+    &quot;PGUP_OR_PGDN&quot;: &quot;0&quot;,&#xd;
+    &quot;TOTAL_NUM&quot;: &quot;-1&quot;&#xd;
+  },&#xd;
+  &quot;BODY&quot;: {&#xd;
+    &quot;ACCT_CCY&quot;: &quot;CNY&quot;,&#xd;
+    &quot;ACCT_NAME&quot;: &quot;境内对公&quot;,&#xd;
+    &quot;ACCT_SEQ_NO&quot;: &quot;0&quot;,&#xd;
+    &quot;ACCT_TYPE&quot;: &quot;C&quot;,&#xd;
+    &quot;BAL_TYPE&quot;: &quot;CA&quot;,&#xd;
+    &quot;BASE_ACCT_NO&quot;: &quot;62621070080024&quot;,&#xd;
+    &quot;CARD_HOLDING_FLG&quot;: &quot;N&quot;,&#xd;
+    &quot;CCY&quot;: &quot;CNY&quot;,&#xd;
+    &quot;CLIENT_TYPE&quot;: &quot;COR&quot;,&#xd;
+    &quot;COMMISSION_CAUSE&quot;: &quot;&quot;,&#xd;
+    &quot;COMMISSION_CLIENT_NAME&quot;: &quot;&quot;,&#xd;
+    &quot;COMMISSION_DOC_ID&quot;: &quot;&quot;,&#xd;
+    &quot;COMMISSION_DOC_TYPE&quot;: &quot;&quot;,&#xd;
+    &quot;EFFECT_DATE&quot;: &quot;${sysdate_1}&quot;,&#xd;
+    &quot;IS_COMMISSION&quot;: &quot;N&quot;,&#xd;
+    &quot;PROD_TYPE&quot;: &quot;107&quot;,&#xd;
+    &quot;TRAN_AMT&quot;: &quot;103&quot;,&#xd;
+    &quot;TRAN_CCY&quot;: &quot;CNY&quot;,&#xd;
+    &quot;TRAN_TYPE&quot;: &quot;1000&quot;&#xd;
+  },&#xd;
+  &quot;LOCAL_HEAD&quot;: {},&#xd;
+  &quot;SYS_HEAD&quot;: {&#xd;
+    &quot;APPR_FLAG&quot;: &quot;&quot;,&#xd;
+    &quot;APPR_USER_ID&quot;: &quot;&quot;,&#xd;
+    &quot;AUTH_FLAG&quot;: &quot;N&quot;,&#xd;
+    &quot;AUTH_PASSWORD&quot;: &quot;&quot;,&#xd;
+    &quot;AUTH_REQ_SEQ&quot;: &quot;0101012022052509820127&quot;,&#xd;
+    &quot;AUTH_USER_ID&quot;: &quot;&quot;,&#xd;
+    &quot;BRANCH_ID&quot;: &quot;6262&quot;,&#xd;
+    &quot;DEST_BRANCH_NO&quot;: &quot;6262&quot;,&#xd;
+    &quot;MESSAGE_CODE&quot;: &quot;0101&quot;,&#xd;
+    &quot;MESSAGE_TYPE&quot;: &quot;1000&quot;,&#xd;
+    &quot;MODULE_ID&quot;: &quot;RB&quot;,&#xd;
+    &quot;PROGRAM_ID&quot;: &quot;3201&quot;,&#xd;
+    &quot;REVERSAL_TRAN_TYPE&quot;: &quot;&quot;,&#xd;
+    &quot;SCENE_ID&quot;: &quot;01&quot;,&#xd;
+    &quot;SEQ_NO&quot;: &quot;01010120220525${seqNo}&quot;,&#xd;
+    &quot;SERVER_ID&quot;: &quot;127.0.0.1&quot;,&#xd;
+    &quot;SERVICE_CODE&quot;: &quot;MbsdCore&quot;,&#xd;
+    &quot;SOURCE_BRANCH_NO&quot;: &quot;6262&quot;,&#xd;
+    &quot;SOURCE_TYPE&quot;: &quot;010101&quot;,&#xd;
+    &quot;SYSTEM_ID&quot;: &quot;ITS&quot;,&#xd;
+    &quot;TRAN_CODE&quot;: &quot;&quot;,&#xd;
+    &quot;TRAN_DATE&quot;: &quot;${sysdate_1}&quot;,&#xd;
+    &quot;TRAN_MODE&quot;: &quot;ONLINE&quot;,&#xd;
+    &quot;TRAN_TIMESTAMP&quot;: &quot;170058808&quot;,&#xd;
+    &quot;TRAN_TYPE&quot;: &quot;1000&quot;,&#xd;
+    &quot;USER_ID&quot;: &quot;dclg&quot;,&#xd;
+    &quot;USER_LANG&quot;: &quot;CHINESE&quot;,&#xd;
+    &quot;WS_ID&quot;: &quot;05&quot;&#xd;
+  }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${ENSEMBLE_address}</stringProp>
+          <stringProp name="HTTPSampler.port">${ENSEMBLE_port}</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/SmartEnsemble</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">prev.setDataEncoding(&quot;UTF-8&quot;);</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1521822980">&quot;RET_CODE&quot;:&quot;000000&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
