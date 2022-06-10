@@ -113,7 +113,7 @@
     &quot;EFFECT_DATE&quot;: &quot;${sysdate_1}&quot;,&#xd;
     &quot;IS_COMMISSION&quot;: &quot;N&quot;,&#xd;
     &quot;PROD_TYPE&quot;: &quot;107&quot;,&#xd;
-    &quot;TRAN_AMT&quot;: &quot;103&quot;,&#xd;
+    &quot;TRAN_AMT&quot;: &quot;105&quot;,&#xd;
     &quot;TRAN_CCY&quot;: &quot;CNY&quot;,&#xd;
     &quot;TRAN_TYPE&quot;: &quot;1000&quot;&#xd;
   },&#xd;
